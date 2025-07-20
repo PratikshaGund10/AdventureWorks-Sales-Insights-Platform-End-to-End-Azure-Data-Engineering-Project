@@ -1,0 +1,84 @@
+{
+    "name": "DS_dynamic",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "StorageDataLake",
+            "type": "LinkedServiceReference"
+        },
+        "parameters": {
+            "p_dynamic_directory": {
+                "type": "String"
+            },
+            "p_dynamic_file": {
+                "type": "String"
+            }
+        },
+        "annotations": [],
+        "type": "DelimitedText",
+        "typeProperties": {
+            "location": {
+                "type": "AzureBlobFSLocation",
+                "fileName": {
+                    "value": "@dataset().p_dynamic_file",
+                    "type": "Expression"
+                },
+                "folderPath": {
+                    "value": "@dataset().p_dynamic_directory",
+                    "type": "Expression"
+                },
+                "fileSystem": "bronze"
+            },
+            "columnDelimiter": ",",
+            "escapeChar": "\\",
+            "firstRowAsHeader": true,
+            "quoteChar": "\""
+        },
+        "schema": [
+            {
+                "name": "ProductKey",
+                "type": "String"
+            },
+            {
+                "name": "ProductSubcategoryKey",
+                "type": "String"
+            },
+            {
+                "name": "ProductSKU",
+                "type": "String"
+            },
+            {
+                "name": "ProductName",
+                "type": "String"
+            },
+            {
+                "name": "ModelName",
+                "type": "String"
+            },
+            {
+                "name": "ProductDescription",
+                "type": "String"
+            },
+            {
+                "name": "ProductColor",
+                "type": "String"
+            },
+            {
+                "name": "ProductSize",
+                "type": "String"
+            },
+            {
+                "name": "ProductStyle",
+                "type": "String"
+            },
+            {
+                "name": "ProductCost",
+                "type": "String"
+            },
+            {
+                "name": "ProductPrice",
+                "type": "String"
+            }
+        ]
+    },
+    "type": "Microsoft.DataFactory/factories/datasets"
+}

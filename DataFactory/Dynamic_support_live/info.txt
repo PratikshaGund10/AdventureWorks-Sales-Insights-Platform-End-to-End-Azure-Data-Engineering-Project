@@ -1,0 +1,6 @@
+selected resource name:		Dynamic
+selected resource type:		pipeline
+factory name:			adf-awproject-pg
+factory location:		eastus
+subscription id:		25087d69-e48c-4c69-8747-53583687681a
+time of download (UTC):		Sun, 20 Jul 2025 10:52:40 GMT
