@@ -4,7 +4,7 @@ This repository presents a complete, production-style Azure Data Engineering pip
 
 ---
 
-## 📄 Business Statement
+## Business Statement
 
 > **"The Sales Operations and Strategy team at AdventureWorks needs a unified view of regional sales performance, product demand trends, and return rates across categories over the past three years (2015–2017) to make informed decisions on inventory planning and regional promotions."**
 
@@ -12,7 +12,7 @@ This project addresses that requirement by designing a scalable data platform th
 
 ---
 
-## 🧠 Learning Objectives
+## Learning Objectives
 
 - Apply end-to-end data engineering principles using Azure-native tools
 - Design, orchestrate, and transform big data pipelines with business relevance
@@ -20,7 +20,7 @@ This project addresses that requirement by designing a scalable data platform th
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 | Component      | Tool/Service                    |
 |----------------|----------------------------------|
@@ -33,7 +33,7 @@ This project addresses that requirement by designing a scalable data platform th
 
 ---
 
-## 🌐 Architecture Diagram
+## Architecture Diagram
 
 ![Azure Medallion Architecture](./Architecture.png)
 
@@ -43,14 +43,14 @@ This project addresses that requirement by designing a scalable data platform th
 
 ---
 
-## 🔄 Project Phases
+## Project Phases
 
 ### 🔹 Phase 1 – Ingestion (ADF → Bronze Layer)
 - Built using Azure Data Factory with dynamic pipelines and parameterized datasets
 - Pipeline looped through JSON-driven configs to load multiple GitHub CSV files via HTTP
 - Stored raw data in ADLS Gen2 under `/bronze`
 
-➡️ [ADF Pipelines & Configs](./DataFactory/Dynamic_support_live)
+➡ [ADF Pipelines & Configs](./DataFactory/Dynamic_support_live)
 
 **Subfolders:**
 - `pipeline/`: Pipeline definitions  
@@ -60,21 +60,21 @@ This project addresses that requirement by designing a scalable data platform th
 
 ---
 
-### 🔸 Phase 2 – Transformation (Databricks → Silver Layer)
+### Phase 2 – Transformation (Databricks → Silver Layer)
 - Used Azure Databricks to transform Bronze data into clean Parquet format
 - Applied string parsing, joins, date enrichment, and schema alignment
 
-➡️ [Silver Layer Databricks Notebook](./Databricks/Notebooks/Sliver%20Layer.html)
+➡ [Silver Layer Databricks Notebook](./Databricks/Notebooks/Sliver%20Layer.html)
 
 *Note: Notebook exported as HTML for readability and sharing.*
 
 ---
 
-### 🟡 Phase 3 – Serving (Synapse → Gold Layer)
+### Phase 3 – Serving (Synapse → Gold Layer)
 - Queried Parquet files from `/silver` using Serverless SQL in Synapse
 - Created modular views to serve as fact and dimension tables
 
-➡️ [Synapse SQL Scripts](./Synapse)
+➡ [Synapse SQL Scripts](./Synapse)
 
 **Key Scripts:**
 - `Create External Table.sql`: Define external tables on Parquet files  
@@ -83,48 +83,48 @@ This project addresses that requirement by designing a scalable data platform th
 
 ---
 
-### 📊 Phase 4 – Visualization (Power BI)
+### Phase 4 – Visualization (Power BI)
 - Connected Power BI to Synapse views using DirectQuery
 - Designed dashboards for:
   - Sales trends over time
   - Return patterns by product category
   - Performance by region and subcategory
 
-➡️ *Power BI artifacts not yet uploaded – recommend adding `.pbix` file or screenshot in `PowerBI/` folder*
+➡ *Power BI artifacts not yet uploaded – recommend adding `.pbix` file or screenshot in `PowerBI/` folder*
 
 ---
 
-## 🗂️ Folder Structure
+## Folder Structure
 
-- 📁 [DataFactory](https://github.com/PratikshaGund/adventureworks-azure-project/tree/main/DataFactory/Dynamic_support_live)
-- 📁 [Databricks](https://github.com/PratikshaGund/adventureworks-azure-project/tree/main/Databricks/Notebooks)
-- 📁 [Synapse](https://github.com/PratikshaGund/adventureworks-azure-project/tree/main/Synapse)
-- 📁 [DataLake](https://github.com/PratikshaGund/adventureworks-azure-project/tree/main/DataLake)
-- 🖼️ [Architecture.png](https://github.com/PratikshaGund/adventureworks-azure-project/blob/main/Architecture.png)
-- 📝 [README.md](https://github.com/PratikshaGund/adventureworks-azure-project/blob/main/README.md)
+-  [DataFactory](https://github.com/PratikshaGund/adventureworks-azure-project/tree/main/DataFactory/Dynamic_support_live)
+-  [Databricks](https://github.com/PratikshaGund/adventureworks-azure-project/tree/main/Databricks/Notebooks)
+-  [Synapse](https://github.com/PratikshaGund/adventureworks-azure-project/tree/main/Synapse)
+-  [DataLake](https://github.com/PratikshaGund/adventureworks-azure-project/tree/main/DataLake)
+-  [Architecture.png](https://github.com/PratikshaGund/adventureworks-azure-project/blob/main/Architecture.png)
+-  [README.md](https://github.com/PratikshaGund/adventureworks-azure-project/blob/main/README.md)
 
 
 ---
 
-## 🧩 Project Tracker
+## Project Tracker
 
 Track development tasks, enhancements, and workflow on the [GitHub Project Board](https://github.com/yourusername/your-repo-name/projects/1).
 
 ---
 
-## 🚀 Highlights
+## Highlights
 
-- 🔁 ADF parameterized ingestion with ForEach loop  
-- ⚙️ PySpark-based transformation and enrichment  
-- 📂 Structured Data Lake using Medallion zones  
-- 🧠 Star schema design and Synapse views  
-- 📊 Power BI dashboards tied to business KPIs  
-- ✅ Clean, modular repo structure and code documentation
+-  ADF parameterized ingestion with ForEach loop  
+-  PySpark-based transformation and enrichment  
+-  Structured Data Lake using Medallion zones  
+-  Star schema design and Synapse views  
+-  Power BI dashboards tied to business KPIs  
+-  Clean, modular repo structure and code documentation
 
 ---
 
-## 🙋‍♀️ About Me
+## About Me
 
 I'm a data engineering and analytics enthusiast passionate about building real-world cloud data solutions. This project demonstrates my ability to design and deliver scalable pipelines, model business data, and enable insight-driven decision-making.
 
-📬 [Connect on LinkedIn](https://www.linkedin.com/in/pratiksha-gund/) if you're hiring for roles in **Data Engineering**, **Analytics Engineering**, or **Cloud Data Platforms**.
+[Connect on LinkedIn](https://www.linkedin.com/in/pratiksha-gund/) if you're hiring for roles in **Data Engineering**, **Analytics Engineering**, or **Cloud Data Platforms**.
