@@ -96,12 +96,12 @@ This project addresses that requirement by designing a scalable data platform th
 
 ## Folder Structure
 
--  [DataFactory](https://github.com/PratikshaGund/adventureworks-azure-project/tree/main/DataFactory/Dynamic_support_live)
--  [Databricks](https://github.com/PratikshaGund/adventureworks-azure-project/tree/main/Databricks/Notebooks)
--  [Synapse](https://github.com/PratikshaGund/adventureworks-azure-project/tree/main/Synapse)
--  [DataLake](https://github.com/PratikshaGund/adventureworks-azure-project/tree/main/DataLake)
--  [Architecture.png](https://github.com/PratikshaGund/adventureworks-azure-project/blob/main/Architecture.png)
--  [README.md](https://github.com/PratikshaGund/adventureworks-azure-project/blob/main/README.md)
+-  [DataFactory](./DataFactory/Dynamic_support_live)
+-  [Databricks](](./Databricks/)
+-  [Synapse](./Synapse)
+-  [DataLake](./DataLake)
+-  [Architecture.png](./Architecture.png)
+-  [README.md](./README.md)
 
 
 ---
