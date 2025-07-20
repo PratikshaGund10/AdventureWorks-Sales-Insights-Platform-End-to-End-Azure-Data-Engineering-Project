@@ -108,7 +108,7 @@ This project addresses that requirement by designing a scalable data platform th
 
 ## Project Tracker
 
-Track development tasks, enhancements, and workflow on the [GitHub Project Board](https://github.com/yourusername/your-repo-name/projects/1).
+Track development tasks, enhancements, and workflow on the [GitHub Project Board](https://github.com/users/PratikshaGund10/projects/2).
 
 ---
 
