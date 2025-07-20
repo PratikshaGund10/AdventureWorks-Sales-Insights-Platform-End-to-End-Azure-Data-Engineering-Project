@@ -1,56 +1,86 @@
-# Azure Data Engineering Project – End-to-End Pipeline (ADF, ADLS, Databricks, Synapse)
+# AdventureWorks Sales Insights Platform – End-to-End Azure Data Engineering Project
 
-This project demonstrates an end-to-end Azure Data Engineering solution using real-time scenarios. It showcases dynamic ingestion, transformations with PySpark, and serving data via Synapse Analytics and Power BI. Designed to simulate enterprise-scale pipelines, it also illustrates version control and DevOps readiness.
+This project delivers a scalable Azure Data Engineering solution built to power sales analytics for AdventureWorks using real-time ingestion, PySpark transformations, and cloud-native data warehousing. Designed for enterprise readiness, the project addresses business needs such as regional sales analysis, product return trends, and performance monitoring, making it ideal for data-driven decision-making.
 
 ---
 
-## 📌 Technologies Used
-- **Azure Data Factory (ADF)** – Orchestration of ingestion pipelines (HTTP/API to ADLS Gen2)
-- **Azure Data Lake Storage Gen2 (ADLS)** – Bronze, Silver, Gold zones (Medallion Architecture)
-- **Azure Databricks** – PySpark-based transformations in the silver layer
-- **Azure Synapse Analytics** – Serving layer with SQL data warehousing
-- **Power BI** – Dashboard connection to Synapse
-- **Git & GitHub** – Version control and collaboration
+## 📌 Business Statement
+
+**The Sales Operations and Strategy team at AdventureWorks needs a unified view of regional sales performance, product demand trends, and return rates across categories over the past three years (2015–2017) to make informed decisions on inventory planning and regional promotions.**
+
+---
+
+## 🔧 Technologies Used
+
+* **Azure Data Factory (ADF)** – Orchestrates data ingestion pipelines from API (GitHub) to ADLS Gen2
+* **Azure Data Lake Storage Gen2 (ADLS)** – Implements Medallion Architecture with Bronze (raw), Silver (cleansed), and Gold (analytics-ready) layers
+* **Azure Databricks** – Executes PySpark transformations in Silver layer
+* **Azure Synapse Analytics** – Hosts Gold layer using serverless SQL pools for queryable insights
+* **Power BI** – Connects to Synapse for executive-ready dashboarding
+* **Git & GitHub** – Version control and DevOps readiness
 
 ---
 
 ## 🏗️ Architecture
-![Medallion Architecture](architecture/medallion_architecture.png)
 
-> Medallion architecture with Bronze (raw), Silver (cleansed), and Gold (analytics-ready) zones.
+### Medallion Architecture
+
+* **Bronze** – Raw ingestion from GitHub via API
+* **Silver** – Cleaned & enriched PySpark-transformed data
+* **Gold** – Optimized and modeled tables for reporting in Synapse
 
 ---
 
 ## 🔄 Project Phases
-### Phase 1 – Ingestion (Bronze)
-- Pull multiple CSVs from GitHub via ADF pipelines using parameters and dynamic datasets
-- Store as-is in ADLS Gen2 Bronze container
 
-### Phase 2 – Transformation (Silver)
-- Use Databricks to apply PySpark transformations (date parsing, splitting strings, joins, enrichments)
-- Store clean data in Silver zone as Parquet files
-- Generate visual insights in notebooks
+### Phase 1 – Ingestion (Bronze Layer)
 
-### Phase 3 – Serving (Gold)
-- Load data into Synapse SQL pools from Silver
-- Create views, facts, and dimensions for reporting
+* Dynamically pull multiple CSVs from GitHub API using ADF pipelines
+* Use parameters, ForEach loops, and linked services
+* Store untransformed data in ADLS Gen2 Bronze container
+
+### Phase 2 – Transformation (Silver Layer)
+
+* Read data into Databricks from Bronze using ABFS
+* Apply PySpark transformations:
+
+  * Date parsing, string splitting, joins, aggregations
+  * Creation of enriched fields (e.g., full name, extracted SKU parts)
+* Store transformed data in Silver layer as Parquet
+* Perform visual EDA in Databricks notebooks
+
+### Phase 3 – Serving (Gold Layer)
+
+* Load clean data from Silver into Azure Synapse serverless SQL pools
+* Create dimensional model (facts & dimensions)
+* Optimize for Power BI consumption
 
 ### Phase 4 – Visualization
-- Connect Power BI to Synapse using direct query
-- Build executive-ready reports
+
+* Connect Power BI to Synapse via DirectQuery
+* Build visuals answering key business questions:
+
+  * Sales by territory and time
+  * Top product categories by return rates
+  * Daily sales trend analysis
+  * Return-to-sales ratio by region
 
 ---
 
 ## 🧪 Real-Time Scenarios Implemented
-- Dynamic pipelines with `ForEach`, parameters, and config-driven ingestion
-- Service principal authentication for Databricks-to-ADLS
-- PySpark transformations: string splits, date functions, aggregations
-- Serverless querying in Synapse SQL
+
+* Dynamic, config-driven ingestion via ADF pipelines
+* API-based dataset sourcing
+* Service Principal authentication between Databricks and ADLS
+* Parameterized PySpark transformations using reusable notebooks
+* Serverless SQL queries in Synapse for BI-ready reporting
 
 ---
 
 ## 💡 Why This Project?
-This project helped me crack multiple interviews and confidently showcase:
-- My Azure Data Engineering expertise
-- Proficiency in Git, orchestration, and big data transformation
-- Real-world readiness for enterprise data pipelines
+
+This project helped me secure multiple data engineering offers by showcasing:
+
+* My hands-on experience building production-ready Azure data platforms
+* Proficiency in cloud-native orchestration, transformation, and warehousing
+* Capability to solve real-world business problems using modern data architectures
