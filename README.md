@@ -46,45 +46,85 @@ This project addresses that requirement by designing a scalable data platform th
 ## 🔄 Project Phases
 
 ### 🔹 Phase 1 – Ingestion (ADF → Bronze Layer)
-- Pulled multiple CSV files dynamically from GitHub using HTTP connector
-- Implemented parameterized pipelines with ForEach activity and external JSON config
-- Stored raw data in ADLS Gen2 `/bronze` container
+- Built using Azure Data Factory with dynamic pipelines and parameterized datasets
+- Pipeline looped through JSON-driven configs to load multiple GitHub CSV files via HTTP
+- Stored raw data in ADLS Gen2 under `/bronze`
 
-➡️ [ADF Pipelines & Parameters](./DataFactory/Dynamic_support_live)
+➡️ [ADF Pipelines & Configs](./DataFactory/Dynamic_support_live)
+
+**Subfolders:**
+- `pipeline/`: Pipeline definitions  
+- `dataset/`: Source/destination dataset configs  
+- `linkedService/`: HTTP and ADLS connections  
+- `Parameters/`: JSON parameter file for dynamic ingestion
 
 ---
 
 ### 🔸 Phase 2 – Transformation (Databricks → Silver Layer)
-- Read data from Bronze layer into Databricks notebooks
-- Performed:
-  - String operations, date parsing, column derivation
-  - Joins across sales, returns, customers, and products
-- Wrote clean Parquet outputs to `/silver` container
+- Used Azure Databricks to transform Bronze data into clean Parquet format
+- Applied string parsing, joins, date enrichment, and schema alignment
 
-➡️ [Databricks Notebooks](./Databricks/Notebooks)
+➡️ [Silver Layer Databricks Notebook](./Databricks/Notebooks/Sliver%20Layer.html)
+
+*Note: Notebook exported as HTML for readability and sharing.*
 
 ---
 
 ### 🟡 Phase 3 – Serving (Synapse → Gold Layer)
-- Queried Parquet files in `/silver` with Synapse Serverless SQL
-- Created views:
-  - `vw_sales`, `vw_returns`, `vw_products`, `vw_territories`
-- Modeled star schema (dim-fact) for efficient Power BI consumption
+- Queried Parquet files from `/silver` using Serverless SQL in Synapse
+- Created modular views to serve as fact and dimension tables
 
 ➡️ [Synapse SQL Scripts](./Synapse)
+
+**Key Scripts:**
+- `Create External Table.sql`: Define external tables on Parquet files  
+- `Create_Schema.sql`: Optional schema object definitions  
+- `view *.sql`: Sales, returns, territories, product hierarchy, customers, and calendar views
 
 ---
 
 ### 📊 Phase 4 – Visualization (Power BI)
-- Connected Power BI via DirectQuery to Synapse views
-- Built dynamic dashboards:
-  - Monthly sales trends
-  - Top-selling products & return ratios
-  - Region-wise performance and KPIs
+- Connected Power BI to Synapse views using DirectQuery
+- Designed dashboards for:
+  - Sales trends over time
+  - Return patterns by product category
+  - Performance by region and subcategory
 
-➡️ *Power BI folder not added yet — you can include screenshots or .pbix file later under `PowerBI/`*
+➡️ *Power BI artifacts not yet uploaded – recommend adding `.pbix` file or screenshot in `PowerBI/` folder*
 
 ---
 
-## 🗂️ Folder Structure Overview
+## 🗂️ Folder Structure
 
+- 📁 [DataFactory](https://github.com/PratikshaGund/adventureworks-azure-project/tree/main/DataFactory/Dynamic_support_live)
+- 📁 [Databricks](https://github.com/PratikshaGund/adventureworks-azure-project/tree/main/Databricks/Notebooks)
+- 📁 [Synapse](https://github.com/PratikshaGund/adventureworks-azure-project/tree/main/Synapse)
+- 📁 [DataLake](https://github.com/PratikshaGund/adventureworks-azure-project/tree/main/DataLake)
+- 🖼️ [Architecture.png](https://github.com/PratikshaGund/adventureworks-azure-project/blob/main/Architecture.png)
+- 📝 [README.md](https://github.com/PratikshaGund/adventureworks-azure-project/blob/main/README.md)
+
+
+---
+
+## 🧩 Project Tracker
+
+Track development tasks, enhancements, and workflow on the [GitHub Project Board](https://github.com/yourusername/your-repo-name/projects/1).
+
+---
+
+## 🚀 Highlights
+
+- 🔁 ADF parameterized ingestion with ForEach loop  
+- ⚙️ PySpark-based transformation and enrichment  
+- 📂 Structured Data Lake using Medallion zones  
+- 🧠 Star schema design and Synapse views  
+- 📊 Power BI dashboards tied to business KPIs  
+- ✅ Clean, modular repo structure and code documentation
+
+---
+
+## 🙋‍♀️ About Me
+
+I'm a data engineering and analytics enthusiast passionate about building real-world cloud data solutions. This project demonstrates my ability to design and deliver scalable pipelines, model business data, and enable insight-driven decision-making.
+
+📬 [Connect on LinkedIn](https://www.linkedin.com/in/pratiksha-gund/) if you're hiring for roles in **Data Engineering**, **Analytics Engineering**, or **Cloud Data Platforms**.
