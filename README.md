@@ -97,7 +97,7 @@ This project addresses that requirement by designing a scalable data platform th
 ## Folder Structure
 
 -  [DataFactory](./DataFactory/Dynamic_support_live)
--  [Databricks](](./Databricks/)
+-  [Databricks](](./Databricks/Notebooks)
 -  [Synapse](./Synapse)
 -  [DataLake](./DataLake)
 -  [Architecture.png](./Architecture.png)
