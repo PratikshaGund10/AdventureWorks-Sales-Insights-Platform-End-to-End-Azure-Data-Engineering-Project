@@ -1,6 +1,6 @@
 # AdventureWorks Sales Insights Platform – End-to-End Azure Data Engineering Project
 
-This repository presents a complete, production-style Azure Data Engineering pipeline designed to simulate business analytics use cases for the AdventureWorks company. Built using Microsoft Azure’s modern data stack, this project delivers an integrated ETL solution from API-based ingestion to Power BI reporting, adhering to Medallion architecture (Bronze, Silver, Gold). A dedicated [GitHub Project Tracker](https://github.com/yourusername/your-repo-name/projects/1) is included to demonstrate real-world agile practices.
+This repository presents a complete, production-style Azure Data Engineering pipeline designed to simulate business analytics use cases for the AdventureWorks company. Built using Microsoft Azure’s modern data stack, this project delivers an integrated ETL solution from API-based ingestion to Power BI reporting, adhering to Medallion architecture (Bronze, Silver, Gold). A dedicated [GitHub Project Tracker](https://github.com/users/PratikshaGund10/projects/2) is included to demonstrate real-world agile practices.
 
 ---
 
