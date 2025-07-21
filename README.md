@@ -127,8 +127,8 @@ Track development tasks, enhancements, and workflow on the [GitHub Project Board
 
 I'm a data engineering and analytics enthusiast passionate about building real-world cloud data solutions. This project demonstrates my ability to design and deliver scalable pipelines, model business data, and enable insight-driven decision-making.
 
-**Email:** [pratiksha.gund@example.com](mailto:pratikshagund10@gmail.com)  
-**LinkedIn:** [linkedin.com/in/pratikshagund](https://www.linkedin.com/in/pratiksha-gund/)  
+**Email:** [pratikshagund10@gmail.com](mailto:pratikshagund10@gmail.com)  
+**LinkedIn:** [pratikshagund](https://www.linkedin.com/in/pratiksha-gund/)  
 **Portfolio:** [pratikshagund.dev]()
 
 Connect on LinkedIn if you're hiring for roles in **Data Engineering**, **Analytics Engineering**, or **Cloud Data Platforms**.
